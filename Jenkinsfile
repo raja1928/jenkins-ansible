@@ -38,7 +38,7 @@ pipeline {
         stage('APP Deploy by Ansible') {
             steps {
                sh """
-                    ansible-playbook deployment.yml --extra-vars "container_image_tag=${dockerTag}"
+                    ansible-playbook deployment.yaml --extra-vars "container_image_tag=${dockerTag}"
                     """ 
             }
         }
