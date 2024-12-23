@@ -35,10 +35,7 @@ pipeline {
                 dockerECRImagePush('$dockerImage', '$dockerTag', '$repoName', 'awsCred', 'us-east-2')
             }
         }
-        stage('Kubernetes Deploy - DEV') {
-            when {
-                branch 'development'
-            }
+        stage('APP Deploy by Ansible') {
             steps {
                 kubernetesEKSHelmDeploy('$dockerImage', '$dockerTag', '$repoName', 'awsCred', 'us-east-2', 'raja', 'dev')
             }
