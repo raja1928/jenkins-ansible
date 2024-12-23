@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
     - name: Create a Deployment in Kubernetes
-      community.kubernetes.k8s:
+      kubernetes.core.k8s:
         kubeconfig: ~/.kube/config
         namespace: dev
         definition:
