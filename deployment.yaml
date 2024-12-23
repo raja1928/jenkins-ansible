@@ -25,7 +25,7 @@
               spec:
                 containers:
                 - name: books
-                  image: "061039788053.dkr.ecr.us-east-2.amazonaws.com/tom":"{{ container_image_tag }}"
+                  image: "061039788053.dkr.ecr.us-east-2.amazonaws.com/tom:{{ container_image_tag }}"
                   ports:
                     - containerPort: 8080
           apiVersion: v1
