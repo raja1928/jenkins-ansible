@@ -37,7 +37,9 @@ pipeline {
         }
         stage('APP Deploy by Ansible') {
             steps {
-                kubernetesEKSHelmDeploy('$dockerImage', '$dockerTag', '$repoName', 'awsCred', 'us-east-2', 'raja', 'dev')
+               sh """
+                    ansible-playbook deploy.yml --extra-vars "container_image_tag=${dockerTag}"
+                    """ 
             }
         }
      
